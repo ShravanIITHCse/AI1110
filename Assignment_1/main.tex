@@ -359,10 +359,10 @@ $$\pr{Z = k} = \binom{n}{k}\,p^k\,q^{n-k}$$
 We will define a function for cummulative distribution of the above question
 
 \begin{align} 
-	F_X(i)&=\pr{X\leq i}\\
-	\pr{X=i}&= \binom{6}{i} \cdot p^i \cdot (q)^{6-i}\\
+	F_Z(i)&=\pr{Z\leq i}\\
+	\pr{Z=i}&= \binom{6}{i} \cdot p^i \cdot (q)^{6-i}\\
 	\therefore   
-	F_X(i)&=\sum_{r=0}^i{\binom{6}{r}}p^r(q)^{6-r}
+	F_Z(i)&=\sum_{r=0}^i{\binom{6}{r}}p^r(q)^{6-r}
 \end{align}
 
 
@@ -381,7 +381,7 @@ We will define a function for cummulative distribution of the above question
 	
 	\item 
 	\begin{align}
-		\pr{Z>=4} &=1-F\brak{Z=3}
+		\pr{Z>=4} &=1-F_Z\brak{3}
 		\\&= \pr{Z = 4}+\pr{Z=5}+\pr{Z = 6} \\&= 
 		\binom{6}{4}\brak{\frac{2}{5}}^4\brak{\frac{3}{5}}^2
 		+\binom{6}{5}\brak{\frac{2}{5}}^5\brak{\frac{3}{5}}^1
@@ -391,7 +391,7 @@ We will define a function for cummulative distribution of the above question
 	
 	\item 
 	\begin{align}
-		\pr{Z < 6} &= F\brak{Z=5} 
+		\pr{Z < 6} &= F_Z\brak{5} 
 		\\&= 1-\pr{Z = 6} \\&= 1 - \binom{6}{6}\brak{\frac{2}{5}}^6\brak{\frac{3}{5}}^0
 		\\&= \frac{15561}{15625}  
 	\end{align}
