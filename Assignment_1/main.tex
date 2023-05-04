@@ -373,13 +373,8 @@ Some Required Values, from (3)
 	+\comb{6}{1}\brak{0.4}^1\brak{0.6}^5\nonumber
 	\\&+\comb{6}{2}\brak{0.4}^2\brak{0.6}^4
 	+\comb{6}{3}\brak{0.4}^3\brak{0.6}^3 \nonumber\\&= 0.8208\\
-	F_Z(4)&=1-Pr(5)-Pr(6)\nonumber
-	\\&=1-\comb{6}{5}\brak{0.4}^5\brak{0.6}^1
-	-\comb{6}{6}\brak{0.4}^6\brak{0.6}^0\nonumber
-	\\&= 0.95904\\
 	F_Z(5) &= 1-Pr(6)\nonumber
-	\\&=0.995904\\
-	F_Z(6)&=1
+	\\&=0.995904
 \end{align}
 	
 
@@ -393,9 +388,7 @@ Some Required Values, from (3)
 \begin{enumerate}
 	\item 
 	\begin{align}
-		&\pr{Z = 6} = F_Z(6)-F_Z(5)\nonumber
-		\\
-		&\text{from (6) and (7)}\nonumber
+		\pr{Z = 6} &= \comb{6}{6}\brak{0.4}^6\brak{0.6}^0\nonumber
 		\\&= 0.004096 
 	\end{align}
 	
@@ -410,14 +403,13 @@ Some Required Values, from (3)
 	\item 
 	\begin{align}
 		&\pr{Z < 6} = F_Z\brak{5}\nonumber
-		\\&\text{from (6)}\nonumber
+		\\&\text{from (5)}\nonumber
 		\\&= 0.995904  
 	\end{align}
 	
 	\item 
 	\begin{align}
-		&\pr{Z = 3} = F_Z(4)-F_Z(3) \nonumber
-		\\ &\text{from (4) and (5)} \nonumber
+		\pr{Z = 3} &= \comb{6}{3}\brak{0.4}^3\brak{0.6}^3 \nonumber
 		\\&= 0.13824
 	\end{align}
 \end{enumerate}
