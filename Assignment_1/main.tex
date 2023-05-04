@@ -97,6 +97,9 @@
 	%frame=single, 
 	%breaklines=true
 	%}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\newcommand{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand{\comb}[1][-1mu]{\permcomb[#1]{C}}
 \renewcommand{\abstractname}{Question}
 
 \begin{document}
@@ -116,7 +119,7 @@
 	%\newtheorem{cor}{Corollary}
 	\newcommand{\BEQA}{\begin{eqnarray}}
 		\newcommand{\EEQA}{\end{eqnarray}}
-	\newcommand{\define}{\stackrel{\triangle}{=}}
+%	\newcommand{\define}{\stackrel{\triangle}{=}}
 	
 	\bibliographystyle{IEEEtran}
 	%\bibliographystyle{ieeetr}
@@ -354,16 +357,32 @@ Here , in this problem we are drawing 6 balls with replacement having only two o
 Let, $Z$ be the Random variable that represents the number of balls marked as $X$ in 6 trials.
 
 
-$$\pr{Z = k} = \binom{n}{k}\,p^k\,q^{n-k}$$
+$$\pr{Z = k} = \comb{n}{k}\,p^k\,q^{n-k}$$
 
 We will define a function for cummulative distribution of the above question
 
-\begin{align} 
+\begin{align}
 	F_Z(i)&=\pr{Z\leq i}\\
-	\pr{Z=i}&= \binom{6}{i} \cdot p^i \cdot (q)^{6-i}\\
+	\pr{Z=i}&= \comb{6}{i} \cdot p^i \cdot q^{6-i}\\
 	\therefore   
-	F_Z(i)&=\sum_{r=0}^i{\binom{6}{r}}p^r(q)^{6-r}
+	F_Z(i)&=\sum_{r=0}^i{\comb{6}{r}}\cdot p^r\cdot q^{6-r}
 \end{align}
+Some Required Values, from (3)
+\begin{align}	
+	F_Z(3)&=\comb{6}{0}\brak{0.4}^0\brak{0.6}^6
+	+\comb{6}{1}\brak{0.4}^1\brak{0.6}^5\nonumber
+	\\&+\comb{6}{2}\brak{0.4}^2\brak{0.6}^4
+	+\comb{6}{3}\brak{0.4}^3\brak{0.6}^3 \nonumber\\&= 0.8208\\
+	F_Z(4)&=1-Pr(5)-Pr(6)\nonumber
+	\\&=1-\comb{6}{5}\brak{0.4}^5\brak{0.6}^1
+	-\comb{6}{6}\brak{0.4}^6\brak{0.6}^0\nonumber
+	\\&= 0.95904\\
+	F_Z(5) &= 1-Pr(6)\nonumber
+	\\&=0.995904\\
+	F_Z(6)&=1
+\end{align}
+	
+
 
 
 
@@ -374,32 +393,32 @@ We will define a function for cummulative distribution of the above question
 \begin{enumerate}
 	\item 
 	\begin{align}
-		\pr{Z = 6} &= \binom{6}{6}\brak{\frac{2}{5}}^6\brak{\frac{3}{5}}^{0}
-		\\&= \frac{64}{15625} 
+		&\pr{Z = 6} = F_Z(6)-F_Z(5)\nonumber
+		\\
+		&\text{from (6) and (7)}\nonumber
+		\\&= 0.004096 
 	\end{align}
 	
 	
 	\item 
 	\begin{align}
-		\pr{Z>=4} &=1-F_Z\brak{3}
-		\\&= \pr{Z = 4}+\pr{Z=5}+\pr{Z = 6} \\&= 
-		\binom{6}{4}\brak{\frac{2}{5}}^4\brak{\frac{3}{5}}^2
-		+\binom{6}{5}\brak{\frac{2}{5}}^5\brak{\frac{3}{5}}^1
-		\\&+\binom{6}{6}\brak{\frac{2}{5}}^6\brak{\frac{3}{5}}^0\nonumber
-		\\&= \frac{2740}{15625} =\frac{548}{3125} 
+		&\pr{Z\geq4} = 1-F_Z\brak{3}\nonumber
+		\\&\text{from (4)}\nonumber
+		\\&= 0.1792
 	\end{align}
 	
 	\item 
 	\begin{align}
-		\pr{Z < 6} &= F_Z\brak{5} 
-		\\&= 1-\pr{Z = 6} \\&= 1 - \binom{6}{6}\brak{\frac{2}{5}}^6\brak{\frac{3}{5}}^0
-		\\&= \frac{15561}{15625}  
+		&\pr{Z < 6} = F_Z\brak{5}\nonumber
+		\\&\text{from (6)}\nonumber
+		\\&= 0.995904  
 	\end{align}
 	
 	\item 
 	\begin{align}
-		\pr{Z = 3} &= \binom{6}{3}\brak{\frac{2}{5}}^3\brak{\frac{3}{5}}^3 
-		\\&= \frac{864}{3125} 
+		&\pr{Z = 3} = F_Z(4)-F_Z(3) \nonumber
+		\\ &\text{from (4) and (5)} \nonumber
+		\\&= 0.13824
 	\end{align}
 \end{enumerate}
 
