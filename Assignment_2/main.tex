@@ -312,105 +312,41 @@
 
 \maketitle
 \begin{abstract}
-	In answering a question on a multiple choice test, a student either knows the answer or guesses. 
-	Let \frac{3/4}be the probability that he knows the answer and
-4
-4
-be the probability that he guesses. Assuming that a student who guesses at the
-1
-answer will be correct with probability . What is the probability that the stu-
-4
-dent knows the answer given that he answered it correctly? 
-\begin{enumerate}
-	\item all will bear 'X' mark. 
-	\item not more than 2 will bear 'Y' mark. 
-	\item at least one ball will bear 'Y' mark. 
-	\item the number of balls with 'X' mark and 'Y' mark will be equal.
-\end{enumerate}	
-
-	
+	In answering a question on a multiple choice
+	test, a student either knows the answer or guesses. Let $\frac{3}{4}$ be the probability that he knows the answer and $\frac{1}{4}$ be the probability that he guesses. Assuming that a student who
+	guesses at the answer will be correct with probability $\frac{1}{4}$.What is the probability that the student knows the answer given that he answered it correctly? 
 \end{abstract}
 
 \section*{Solution -:}
 \subsection*{Given,}
 
 
+Let $X \in \cbrak{0,1}$ where 0 denotes a guess and 1 denotes that he knows the answer. Let $Y \in \cbrak{0,1}$ where 0 being the case when the answer is incorrect and 1 being the  case that the answer is correct.
 
-Probability of an event $E$ is defined as
 
-
-$$\pr{E} = \frac{\text{Number of outcomes favourable to event }E}{\text{Total number of outcomes}}$$
+From the given information,
 
 \begin{table}[htbp]
-\label{tab:ncert/12/13/6/5/1}
-\input{tables/table.tex}
-\caption{Given Information}
+\label{tab:ncert/12/13/3/4/1}
+\input{tables/table1.tex}
+\caption{Random Variable and their description}
+\end{table}
+
+\begin{table}[htbp]
+	\label{tab:ncert/12/13/3/4/2}
+	\input{tables/table2.tex}
+	\caption{Probability of events}
 \end{table}
 
 
-
-Here , in this problem we are drawing 6 balls with replacement having only two ouptuts eihter ball marked with $X$ or Ball marked with $Y$ So this trials can be thought of as Binomial trials. 
-
-
-Let, $Z$ be the Random variable that represents the number of balls marked as $X$ in 6 trials.
-
-
-$$\pr{Z = k} = \comb{n}{k}\,p^k\,q^{n-k}$$
-
-We will define a function for cummulative distribution of the above question
+The probability that the student knows the answer and he answered it correctly is 
 
 \begin{align}
-	F_Z(i)&=\pr{Z\leq i}\\
-	\pr{Z=i}&= \comb{6}{i} \cdot p^i \cdot q^{6-i}\\
-	\therefore   
-	F_Z(i)&=\sum_{r=0}^i{\comb{6}{r}}\cdot p^r\cdot q^{6-r} \label{eq3}
-\end{align}
-Some Required Values, from \eqref{eq3}
-\begin{align}	
-	F_Z(3)&=\comb{6}{0}\brak{0.4}^0\brak{0.6}^6
-	+\comb{6}{1}\brak{0.4}^1\brak{0.6}^5
-	\\&+\comb{6}{2}\brak{0.4}^2\brak{0.6}^4
-	+\comb{6}{3}\brak{0.4}^3\brak{0.6}^3 \\&= 0.8208\label{eq6}\\
-	F_Z(5) &= 1-Pr(6)
-	\\&=0.995904\label{eq8}
-\end{align}
-	
-
-
-
-
-%\input{./tables/table.tex}
-
-
-
-\begin{enumerate}
-	\item 
-	\begin{align}
-		\pr{Z = 6} &= \comb{6}{6}\brak{0.4}^6\brak{0.6}^0
-		\\&= 0.004096 
+	&\pr{X=1|Y=1} \\&=\frac{\pr{Y=1|X=1}\pr{X=1}}{\sum_{i=0}^{i=1}Pr(Y=1|X=i)Pr(X=i)}\\
+	&=\frac{0.75}{{0.25\times0.25}+{1\times0.75}}
+	\\
+	&=0.92308
 	\end{align}
-	
-	
-	\item 
-	\begin{align}
-		&\pr{Z\geq4} = 1-F_Z\brak{3}
-		\\&\text{from} \eqref{eq6}
-		\\&= 0.1792
-	\end{align}
-	
-	\item 
-	\begin{align}
-		&\pr{Z < 6} = F_Z\brak{5}
-		\\&\text{from} \eqref{eq8}
-		\\&= 0.995904  
-	\end{align}
-	
-	\item 
-	\begin{align}
-		\pr{Z = 3} &= \comb{6}{3}\brak{0.4}^3\brak{0.6}^3 
-		\\&= 0.13824
-	\end{align}
-\end{enumerate}
 
 
 
