@@ -397,7 +397,6 @@ By approximating that, $k-np$ is of order $\sqrt{n}$
 	\pr{X = x} &= \frac{e^{-\frac{(x-\mu)^2}{2\sigma^2}}}{\sqrt{2\pi\sigma}}
 \end{align}
 \\
-By Q-function,
 \begin{align}
 	\pr{X \geq 12} &= 1 - \pr{X < 12}\\
 	&= 1 - F_X(11)
@@ -419,8 +418,13 @@ Hence,
 	Z &= \frac{11-10}{\sqrt{5}}\\
 	Z &= 0.4472135955
 \end{align}
-By Z-score table,
-$ \pr{X \leq 11} = F_X(11) = 0.673$\\
+By Q-function,
+\begin{align}
+	Q(Z) &= \int_Z^{\infty} \frac{1}{\sqrt{2\pi}}e^{-\frac{y^2}{2}}dy\\
+	&= 0.673\\
+	\pr{X < 11} &= Q(Z)\\
+	\pr{X \geq 12} &=1 - Q(Z)\\
+\end{align}
 Hence,
 \begin{align}
 	\pr{X \geq 12} &= 1 - 0.673\\
