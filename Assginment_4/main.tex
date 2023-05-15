@@ -403,6 +403,9 @@ By approximating that, $k-np$ is of order $\sqrt{n}$
 \end{align}
 
 Hence,
+
+
+We will take $X$=11.5 for accurate answers,
 \begin{align} 
 	\mu &= np\\
 	\implies
@@ -415,23 +418,24 @@ Hence,
 	\sigma&= \sqrt{5}\\
 	\implies
 	Z &= \frac{X-\mu}{\sigma}\\
-	Z &= \frac{11-10}{\sqrt{5}}\\
-	Z &= 0.4472135955
+	Z &= \frac{11.5-10}{\sqrt{5}}\\
+	Z &= 0.6708
 \end{align}
 By Q-function,
 \begin{align}
 	Q(Z) &= \int_Z^{\infty} \frac{1}{\sqrt{2\pi}}e^{-\frac{y^2}{2}}dy\\
-	&= 0.673\\
-	\pr{X < 11} &= Q(Z)\\
+	&= 0.6708\\	
+	\pr{X < 12} &= Q(Z)\\
 	\pr{X \geq 12} &=1 - Q(Z)\\
 \end{align}
 Hence,
+
 \begin{align}
-	\pr{X \geq 12} &= 1 - 0.673\\
-	&= 0.327
+	\pr{X \geq 12} &= 1 - 0.7486\\
+	&= 0.2514
 \end{align}
 So, The answer differs by,
 
-\(0.327 - 0.2517 = 0.0753\)
+\(0.2517 - 0.2514 = 0.0003\)
 \end{document}
 
